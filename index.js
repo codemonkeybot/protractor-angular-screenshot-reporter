@@ -75,11 +75,11 @@ function jasmine2MetaDataBuilder(spec, descriptions, results, capabilities) {
 	var metaData = {
 		description: descriptions.join(' ')
 		, passed: results.status == 'passed'
-		, os: capabilities.platform
-		, sessionId: capabilities['webdriver.remote.sessionid']
+		, os: capabilities.get('platform')
+		, sessionId: capabilities.get('webdriver.remote.sessionid')
 		, browser: {
-			name: capabilities.browserName
-			, version: capabilities.version
+			name: capabilities.get('browserName')
+			, version: capabilities.get('version')
 		}
 	};
 
